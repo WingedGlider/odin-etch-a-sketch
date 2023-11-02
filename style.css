@@ -1,0 +1,14 @@
+.canvas{
+    display: flex;
+    width: 576px;
+    height: 576px;
+}
+.col{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.pixel{
+    flex-grow: 1;
+    background-color: white;
+}
