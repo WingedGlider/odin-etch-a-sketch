@@ -2,23 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Etch-a-Sketch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <title>Pixel Studio</title>
     <link href="./style.css" rel="stylesheet">
     <script src="./script.js" defer></script>
 </head>
 <body>
-    <h1>Etch-a-Sketch</h1>
-    <div class="sidebar">
-        <form>
-            <input type="color">
-            <button class="rainbow">Rainbow!</button>
-            <button class="eraser">Eraser</button>
-            <button class="reset">Clear</button>
-            <input type="range">
-        </form>
-    </div>
-    <div class="canvas">
-        
+    <div class="bounding-box">
+        <h1>Pixel Studio</h1>
+        <label class="range-label">16 x 16</label>
+        <div class="main-box">
+            <div class="button-box">
+                <form>
+                    <input class="color" type="color">
+                    <div class="reset" >Clear canvas</div>
+                    <div class="grid-enable">Enable Grid</div>
+                    <div class="brush">Brush</div>
+                    <div class="pointer">Pixel</div>
+                    <div class="eraser">Eraser</div>
+                    <div class="rainbow">Rainbow!</div>
+                    <div class="trans">Transparency</div>
+                    <div class="save">Save</div>
+                    <div class='saves'>
+                        <button type="button" class="sav">1</button>
+                        <button type="button" class="sav">2</button>
+                        <button type="button" class="sav">3</button>
+                        <button type="button" class="sav">4</button>
+                    </div>
+                </form>
+            </div>
+            <div class="canvas">
+            </div>
+            <div class="range-box">
+                <input value ="16" min="8" max="100" step="1" class="range" type="range">
+            </div>
+        </div>
     </div>
 </body>
 </html>
