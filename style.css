@@ -14,23 +14,64 @@ body{
 }
 form{
     position: absolute;
-    height: 700px;
+    height: 680px;
     width: 150px;
-    margin-right: 150px;
+    margin-right: 180px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    justify-content: space-evenly;
+    user-select: none;
+
+}
+form div{
+    border: 3px solid #F39F5A;
+    width: 130px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: #662549;
+    color: #F39F5A;
+    box-shadow: 3px 3px 10px 2px rgb(0, 0, 0, .8);
+}
+form div:hover{
+    background-color: #52202a;
 }
 h1{
     font-size: 68px;
     color: #F39F5A;
+    text-shadow: 4px 4px #744b28;
 }
-label{
-    color:#F39F5A;
-    align-self: flex-end;
+.saves{ 
+    width: fit-content;
+    height: fit-content;
+    gap: 10px;
+    border: none;
+    background-color: rgb(0, 0, 0,0);
+    box-shadow: none;
+    display: flex;
+    justify-content: space-evenly;
 }
-
+.saves:hover{
+    background-color: rgb(0, 0, 0,0);
+}
+.saves button{
+    background-color: #662549;
+    color: #F39F5A;
+    border: #F39F5A;
+    border-radius: 15px;
+    width: 25px;
+    height: 20px;
+    box-shadow: 2px 3px 6px 2px #18091d;
+}
+.saves button:hover{
+    background-color: #52202a;
+}
+.saves button:disabled{
+    background-color: #52202a;
+}
 .button-box, .range-box{
     display: flex;
     align-items: center;
@@ -43,6 +84,7 @@ label{
     border-radius: 50%;
     background-color: #451952;
     border: solid #F39F5A 6px;
+    box-shadow: 1px 1px 2px 1px #18091d;
 }
 .main-box{
     display: flex;
@@ -80,8 +122,8 @@ label{
     border: 0.1px solid #662549;
 }
 .color{
-    height: 100px;
-    width: 100px;
+    height: 90px;
+    width: 90px;
     border-radius: 100%;
     display: block;
     border: none;
@@ -89,4 +131,39 @@ label{
 }
 ::-webkit-color-swatch{
     border-radius: 100%;
+}
+.enabled{
+    background-color: #52202a;
+    box-shadow: none;
+}
+.rainbow-enable{
+    border: black 3px solid;
+    color: black;
+    box-shadow: none;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 1) 0%,
+        rgba(255, 154, 0, 1) 10%,
+        rgba(208, 222, 33, 1) 20%,
+        rgba(79, 220, 74, 1) 30%,
+        rgba(63, 218, 216, 1) 40%,
+        rgba(47, 201, 226, 1) 50%,
+        rgba(28, 127, 238, 1) 60%,
+        rgba(95, 21, 242, 1) 70%,
+        rgba(186, 12, 248, 1) 80%,
+        rgba(251, 7, 217, 1) 90%,
+        rgba(255, 0, 0, 1) 100%
+    );
+}
+.range-label{
+    color:#F39F5A;
+    align-self: flex-end;
+    display: inline-block;
+}
+.credit{
+    color:#F39F5A;
+    color: #662549;
+    align-self: flex-start;
+    padding: 5px;
+    font-size: 20px;
 }

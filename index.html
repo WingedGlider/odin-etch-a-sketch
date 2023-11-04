@@ -12,14 +12,14 @@
 <body>
     <div class="bounding-box">
         <h1>Pixel Studio</h1>
-        <label class="range-label">16 x 16</label>
+            <label class="range-label">16 x 16</label>
         <div class="main-box">
             <div class="button-box">
                 <form>
                     <input class="color" type="color">
                     <div class="reset" >Clear canvas</div>
-                    <div class="grid-enable">Enable Grid</div>
-                    <div class="brush">Brush</div>
+                    <div class="grid-enable enabled">Disable Grid</div>
+                    <div class="brush enabled">Brush</div>
                     <div class="pointer">Pixel</div>
                     <div class="eraser">Eraser</div>
                     <div class="rainbow">Rainbow!</div>
@@ -36,9 +36,10 @@
             <div class="canvas">
             </div>
             <div class="range-box">
-                <input value ="16" min="8" max="100" step="1" class="range" type="range">
+                <input value ="16" min="8" max="64" step="1" class="range" type="range">
             </div>
         </div>
+        <span class="credit">© Savannah Oliver 2023</span>
     </div>
 </body>
 </html>

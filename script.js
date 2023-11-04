@@ -25,9 +25,6 @@ let painting = false;
 listenerInit();
 generateCanvas(16);
 
-
-
-
 function generateCanvas(val){
     for(let i = val; i > 0; i--){
         let coldiv = document.createElement('div');
@@ -90,11 +87,13 @@ function listenerInit(){
             gridToggle = false;
             toggleGrid();
             grid.textContent = ('Enable Grid')
+            grid.classList.remove('enabled')
         }
         else{
             gridToggle = true;
             toggleGrid();
             grid.textContent = ('Disable Grid')
+            grid.classList.add('enabled')
         }
     });
     color.addEventListener('change', ()=> {
@@ -103,42 +102,68 @@ function listenerInit(){
     egg.addEventListener('click', ()=> {
         if(transval == 1){
             rainbowEnabled = false;
+            rainbow.classList.remove('rainbow-enable');
             eraserEnabled = false;
+            eraser.classList.remove('enabled');
             transval = 0;
+            egg.classList.add('enabled');
         } 
-        else transval = 1;
+        else {
+        transval = 1;
+        egg.classList.remove('enabled');
+        }
     });
     eraser.addEventListener('click', ()=> {
         if (!eraserEnabled){
             colorSelection = 'white';
             eraserEnabled = true;
+            eraser.classList.add('enabled');
             rainbowEnabled = false;
+            rainbow.classList.remove('rainbow-enable');
             transval = 1;
+            egg.classList.remove('enabled');
         }
         else{
             colorSelection = color.value
             eraserEnabled = false;
+            eraser.classList.remove('enabled');
         }
     })
     rainbow.addEventListener('click', ()=> {
         if(!rainbowEnabled){
             rainbowEnabled = true;
+            rainbow.classList.add('rainbow-enable');
+            eraserEnabled = false;
+            eraser.classList.remove('enabled');
+            transval = 1;
+            egg.classList.remove('enabled');
         } else {
             rainbowEnabled = false;
+            rainbow.classList.remove('rainbow-enable');
         }
     })
     brush.addEventListener('click', ()=> {
-        if(brushEnabled) brushEnabled = false;
+        if(brushEnabled){ 
+            brushEnabled = false;
+            brush.classList.remove('enabled');
+        }
         else{ 
             brushEnabled = true;
             pixelEnabled = false;
+            pointer.classList.remove('enabled');
+            brush.classList.add('enabled');
         }
     });
     pointer.addEventListener('click', ()=> {
-        if(pixelEnabled) pixelEnabled = false;
+        if(pixelEnabled) {
+            pixelEnabled = false;
+            pointer.classList.remove('enabled');
+        }
         else{   
             pixelEnabled = true; 
             brushEnabled = false;
+            brush.classList.remove('enabled');
+            pointer.classList.add('enabled');
         }
     });
     range.addEventListener('change', ()=>{
